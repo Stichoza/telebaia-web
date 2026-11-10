@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ka">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -20,8 +20,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Telebaia app icon: a smiling boy on the phone, on a sunny sky">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ka_GE">
+<meta property="og:locale" content="ka_GE">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Telebaia">
 <meta name="twitter:description" content="A playful phone for little ones, aged 1 to 5: numbers, colors, shapes, math and sounds, all by voice, in Georgian and English.">
@@ -181,14 +181,14 @@
 </div>
 
 <div class="langs" role="group" aria-label="Language">
-  <button type="button" data-set-lang="en" aria-pressed="true"><img src="img/flag-en.svg" alt="">English</button>
-  <button type="button" data-set-lang="ka" aria-pressed="false"><img src="img/flag-ka.svg" alt="">ქართული</button>
+  <button type="button" data-set-lang="en" aria-pressed="false"><img src="img/flag-en.svg" alt="">English</button>
+  <button type="button" data-set-lang="ka" aria-pressed="true"><img src="img/flag-ka.svg" alt="">ქართული</button>
 </div>
 
 <main>
 
   <!-- English -->
-  <section class="lang active" data-lang="en" lang="en">
+  <section class="lang" data-lang="en" lang="en">
     <div class="hero">
       <img src="icon.png" alt="Telebaia app icon">
       <h1>Telebaia</h1>
@@ -241,7 +241,7 @@
   </section>
 
   <!-- Georgian -->
-  <section class="lang" data-lang="ka" lang="ka">
+  <section class="lang active" data-lang="ka" lang="ka">
     <div class="hero">
       <img src="icon.png" alt="ტელებაიას აპის ხატულა">
       <h1>ტელებაია</h1>
@@ -314,9 +314,9 @@
       });
     });
 
-    // #ka shows Georgian; #en, no hash or anything else shows English.
+    // #en shows English; #ka, no hash or anything else shows Georgian.
     function showFromHash() {
-      show(location.hash.slice(1).toLowerCase() === "ka" ? "ka" : "en");
+      show(location.hash.slice(1).toLowerCase() === "en" ? "en" : "ka");
     }
 
     // Changing only the hash doesn't reload the page, so follow it.
