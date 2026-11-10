@@ -5,7 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Telebaia Privacy Policy</title>
 <meta name="description" content="Telebaia collects no data. Settings and free-play time stay on the device.">
-<link rel="icon" href="../icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="../icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#80d4ff">
+<link rel="canonical" href="https://telebaia.ge/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Telebaia">
+<meta property="og:title" content="Telebaia Privacy Policy">
+<meta property="og:description" content="Telebaia collects no data. Settings and free-play time stay on the device.">
+<meta property="og:url" content="https://telebaia.ge/privacy/">
+<meta property="og:image" content="https://telebaia.ge/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Telebaia app icon: a smiling boy on the phone, on a sunny sky">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ka_GE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Telebaia Privacy Policy">
+<meta name="twitter:description" content="Telebaia collects no data. Settings and free-play time stay on the device.">
+<meta name="twitter:image" content="https://telebaia.ge/og-image.png">
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     --navy: #1c3a59;
@@ -17,7 +37,8 @@
     --grass: #7dcf5c;
     --card: rgba(255, 255, 255, 0.85);
     --green: #3fbf5a;
-    --font: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Nunito", "Noto Sans Georgian", "BPG Arial", system-ui, sans-serif;
+    /* Embedded (fonts/), so every system shows the same type. */
+    --font: "Nunito", "Noto Sans Georgian", system-ui, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -60,10 +81,10 @@
   main {
     position: relative; z-index: 1;
     max-width: 560px; margin: 0 auto;
-    padding: 32px 16px 18vh;
+    padding: 80px 16px 18vh;
   }
 
-  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
   header img {
     width: 72px; height: 72px; border-radius: 18px; flex: none;
     border: 4px solid #fff; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
@@ -71,9 +92,12 @@
   .brand { font-size: 22px; font-weight: 900; color: inherit; text-decoration: none; }
   .home { display: block; flex: none; }
   h1 { font-size: clamp(26px, 7vw, 34px); font-weight: 900; line-height: 1.1; margin: 0; overflow-wrap: anywhere; }
+  /* კონფიდენციალურობის is one long word: small enough to fit a phone unbroken. */
+  h1:lang(ka) { font-size: clamp(22px, 6.2vw, 34px); }
   .updated { font-size: 15px; font-weight: 600; color: var(--navy-soft); margin: 4px 0 0; }
 
-  .langs { display: flex; gap: 8px; margin: 20px 0; }
+  /* Pinned to the window's top-right corner, outside the centered column. */
+  .langs { position: absolute; top: 16px; right: 16px; z-index: 2; display: flex; gap: 8px; }
   .langs button {
     font: inherit; font-size: 16px; font-weight: 800; color: var(--navy);
     display: flex; align-items: center; gap: 8px;
@@ -115,6 +139,11 @@
   <div class="grass"></div>
 </div>
 
+<div class="langs" role="group" aria-label="Language">
+  <button type="button" data-set-lang="en" aria-pressed="true"><img src="../img/flag-en.svg" alt="">English</button>
+  <button type="button" data-set-lang="ka" aria-pressed="false"><img src="../img/flag-ka.svg" alt="">ქართული</button>
+</div>
+
 <main>
   <header>
     <a href="../" class="home"><img src="../icon.png" alt=""></a>
@@ -123,10 +152,6 @@
     </div>
   </header>
 
-  <div class="langs" role="group" aria-label="Language">
-    <button type="button" data-set-lang="en" aria-pressed="true"><img src="../img/flag-en.svg" alt="">English</button>
-    <button type="button" data-set-lang="ka" aria-pressed="false"><img src="../img/flag-ka.svg" alt="">ქართული</button>
-  </div>
 
   <!-- English -->
   <section class="lang active" data-lang="en" lang="en">
