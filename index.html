@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Telebaia Privacy Policy</title>
-<meta name="description" content="Telebaia collects no data. Settings and free-play time stay on the device.">
+<title>Telebaia</title>
+<meta name="description" content="A playful phone for little ones, aged 1 to 5: numbers, colors, shapes, math and sounds, all by voice, in Georgian and English.">
 <link rel="icon" href="icon.png">
 <style>
   :root {
@@ -17,6 +17,10 @@
     --grass: #7dcf5c;
     --card: rgba(255, 255, 255, 0.85);
     --green: #3fbf5a;
+    --red: #f2463d;
+    --orange: #ff9526;
+    --blue: #3b8cf0;
+    --purple: #9b59d9;
     --font: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Nunito", "Noto Sans Georgian", "BPG Arial", system-ui, sans-serif;
   }
 
@@ -60,19 +64,10 @@
   main {
     position: relative; z-index: 1;
     max-width: 560px; margin: 0 auto;
-    padding: 32px 16px 18vh;
+    padding: 24px 16px 18vh;
   }
 
-  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
-  header img {
-    width: 72px; height: 72px; border-radius: 18px; flex: none;
-    border: 4px solid #fff; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
-  }
-  .brand { font-size: 22px; font-weight: 900; }
-  h1 { font-size: clamp(26px, 7vw, 34px); font-weight: 900; line-height: 1.1; margin: 0; overflow-wrap: anywhere; }
-  .updated { font-size: 15px; font-weight: 600; color: var(--navy-soft); margin: 4px 0 0; }
-
-  .langs { display: flex; gap: 8px; margin: 20px 0; }
+  .langs { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 8px; }
   .langs button {
     font: inherit; font-size: 16px; font-weight: 800; color: var(--navy);
     padding: 8px 18px; border-radius: 999px; cursor: pointer;
@@ -82,24 +77,53 @@
   .langs button[aria-pressed="true"] { background: var(--green); color: #fff; }
   .langs button:active { transform: scale(0.95); }
 
+  .hero { text-align: center; padding: 16px 0 28px; }
+  .hero img {
+    width: 148px; height: 148px; border-radius: 36px;
+    border: 5px solid #fff; box-shadow: 0 6px 0 rgba(0, 0, 0, 0.18);
+  }
+  h1 { font-size: clamp(36px, 10vw, 48px); font-weight: 900; line-height: 1.1; margin: 18px 0 8px; }
+  .tagline { font-size: 19px; font-weight: 700; line-height: 1.45; color: var(--navy-soft); margin: 0 auto; max-width: 420px; }
+  .soon {
+    display: inline-block; margin-top: 20px;
+    font-size: 17px; font-weight: 800; color: #fff;
+    background: var(--navy); border: 4px solid #fff; border-radius: 999px;
+    padding: 12px 24px; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
+  }
+
   .card {
     background: var(--card); border: 4px solid #fff; border-radius: 28px;
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.12);
     padding: 18px 20px; margin-bottom: 16px;
   }
-  .card.summary { background: #fff; }
-  h2 { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
-  p, li { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--navy-soft); margin: 0 0 8px; }
-  .summary p { font-size: 18px; color: var(--navy); }
-  p:last-child, li:last-child { margin-bottom: 0; }
-  ul { margin: 0 0 8px; padding-left: 20px; }
-  a { color: #2f7fd1; font-weight: 700; }
+  h2 { font-size: 22px; font-weight: 900; margin: 28px 4px 12px; }
+  h3 { font-size: 20px; font-weight: 800; margin: 0 0 4px; }
+  p, li { font-size: 16px; font-weight: 600; line-height: 1.5; color: var(--navy-soft); margin: 0; }
 
-  .note { text-align: center; font-size: 14px; font-weight: 600; color: var(--navy-soft); margin-top: 24px; }
+  /* The mini-apps, like the home screen's icon grid. */
+  .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .app { margin: 0; text-align: center; padding: 18px 12px; }
+  .app .icon {
+    width: 64px; height: 64px; margin: 0 auto 10px; border-radius: 18px;
+    display: grid; place-items: center; font-size: 32px;
+    border: 4px solid #fff; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+  }
+  .app p { font-size: 14px; }
+
+  .points { list-style: none; padding: 0; margin: 0; }
+  .points li { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; }
+  .points li + li { border-top: 2px dashed rgba(28, 58, 89, 0.1); }
+  .points .dot { flex: none; font-size: 22px; line-height: 1.2; }
+  .points strong { color: var(--navy); }
+
+  footer { text-align: center; margin-top: 28px; }
+  footer a { color: #2f7fd1; font-weight: 800; font-size: 16px; }
+  footer p { font-size: 14px; margin-top: 10px; }
+  footer .sep { color: var(--navy-soft); margin: 0 8px; }
 
   /* Without JavaScript both languages show, one after the other. */
   .js [data-lang]:not(.active) { display: none; }
-  .lang + .lang { margin-top: 40px; }
+  .lang + .lang { margin-top: 48px; }
 </style>
 </head>
 <body>
@@ -112,13 +136,6 @@
 </div>
 
 <main>
-  <header>
-    <img src="icon.png" alt="">
-    <div>
-      <div class="brand">Telebaia</div>
-    </div>
-  </header>
-
   <div class="langs" role="group" aria-label="Language">
     <button type="button" data-set-lang="en" aria-pressed="true">English</button>
     <button type="button" data-set-lang="ka" aria-pressed="false">ქართული</button>
@@ -126,121 +143,103 @@
 
   <!-- English -->
   <section class="lang active" data-lang="en" lang="en">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: November 10, 2026</p>
-    <br>
-
-    <div class="card summary">
-      <p><strong>Telebaia collects no data.</strong> Nothing about your child or you leaves the device.</p>
+    <div class="hero">
+      <img src="icon.png" alt="Telebaia app icon">
+      <h1>Telebaia</h1>
+      <p class="tagline">A playful phone for little ones, aged 1 to 5. Every tap talks back, so kids learn before they can read.</p>
+      <div class="soon">Coming soon to the App Store</div>
     </div>
 
-    <div class="card">
-      <h2>What we collect</h2>
-      <p>Nothing. Telebaia has no accounts and doesn't ask for names, ages, photos, voice recordings, location, contacts or device identifiers.</p>
-      <p>The app has no analytics, crash reporting, advertising or tracking of any kind, and it doesn't connect to the internet, except to the App Store when you buy or restore the full version.</p>
+    <h2>Little apps inside</h2>
+    <div class="apps">
+      <div class="card app">
+        <div class="icon" style="background: var(--green)">📞</div>
+        <h3>Phone</h3>
+        <p>Numbers 1 to 10, colors and a “where is…?” quiz.</p>
+      </div>
+      <div class="card app">
+        <div class="icon" style="background: var(--orange)">🐮</div>
+        <h3>Sounds</h3>
+        <p>Farm animals, wild animals and vehicles, with their real sounds.</p>
+      </div>
+      <div class="card app">
+        <div class="icon" style="background: var(--purple)">⭐️</div>
+        <h3>Shapes</h3>
+        <p>Square, triangle, circle, diamond, star and heart.</p>
+      </div>
+      <div class="card app">
+        <div class="icon" style="background: var(--blue)">➕</div>
+        <h3>Math</h3>
+        <p>First addition and subtraction, all within 10.</p>
+      </div>
     </div>
 
+    <h2>Made for parents too</h2>
     <div class="card">
-      <h2>What stays on the device</h2>
-      <p>To work, the app stores a few things on the device only:</p>
-      <ul>
-        <li>your settings, such as the language, calm mode, hint text and each app's options;</li>
-        <li>how much of the daily free play each app has used;</li>
-        <li>whether the full version is unlocked (kept by iOS and the App Store).</li>
+      <ul class="points">
+        <li><span class="dot">🗣️</span><p><strong>Everything by voice.</strong> Friendly recorded voice in Georgian and English.</p></li>
+        <li><span class="dot">🌤️</span><p><strong>Calm mode.</strong> Softer colors and a quiet sky for sensitive kids.</p></li>
+        <li><span class="dot">🔒</span><p><strong>Hard to leave by accident.</strong> Back and settings need a swipe, and the app guides you through Guided Access.</p></li>
+        <li><span class="dot">🚫</span><p><strong>No ads, no tracking, no data.</strong> Nothing leaves the device.</p></li>
+        <li><span class="dot">🎁</span><p><strong>Try it free.</strong> Every little app has 2 minutes of free play a day. The full version is a one-time purchase, no subscription.</p></li>
       </ul>
-      <p>We can't see this information. It's deleted when you delete the app.</p>
     </div>
 
-    <div class="card">
-      <h2>Purchases</h2>
-      <p>The full version is a one-time In-App Purchase handled entirely by Apple. We never see your payment details or your Apple Account. Apple only gives us sales reports that don't identify anyone. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
-    </div>
-
-    <div class="card">
-      <h2>Children</h2>
-      <p>Telebaia is made for children aged about 1 to 5. Because it collects no personal information from anyone, it collects none from children. There are no ads, chats or links for children to follow. The only links (Terms of Use and this policy) are on the full version purchase screen, which opens only through a slide-to-unlock control meant for parents.</p>
-    </div>
-
-    <div class="card">
-      <h2>Permissions</h2>
-      <p>The app asks for no permissions: no camera, microphone, photos, location or notifications.</p>
-    </div>
-
-    <div class="card">
-      <h2>Sharing</h2>
-      <p>We have no data, so we share or sell none. The app contains no third-party code that collects data.</p>
-    </div>
-
-    <div class="card">
-      <h2>Changes</h2>
-      <p>If this policy changes, we'll update this page and the date at the top.</p>
-    </div>
-
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Questions about privacy? Contact <a href="mailto:me@stichoza.com">me@stichoza.com</a>.</p>
-    </div>
+    <footer>
+      <a href="privacy/#en">Privacy Policy</a><span class="sep">·</span><a href="mailto:me@stichoza.com">Contact</a>
+      <p>© 2026 Levan Velijanashvili</p>
+    </footer>
   </section>
 
   <!-- Georgian -->
   <section class="lang" data-lang="ka" lang="ka">
-    <h1>კონფიდენციალურობის პოლიტიკა</h1>
-    <p class="updated">ბოლო განახლება: 10 ნოემბერი, 2026</p>
-    <br>
-
-    <div class="card summary">
-      <p><strong>ტელებაია არანაირ მონაცემს არ აგროვებს.</strong> არაფერი თქვენს ან თქვენი შვილის შესახებ მოწყობილობას არ ტოვებს.</p>
+    <div class="hero">
+      <img src="icon.png" alt="ტელებაიას აპის ხატულა">
+      <h1>ტელებაია</h1>
+      <p class="tagline">მხიარული ტელეფონი პატარებისთვის, 1-დან 5 წლამდე. ყოველ შეხებას ხმა პასუხობს, ასე რომ ბავშვები კითხვის ცოდნამდე სწავლობენ.</p>
+      <div class="soon">მალე App Store-ზე</div>
     </div>
 
-    <div class="card">
-      <h2>რას ვაგროვებთ</h2>
-      <p>არაფერს. ტელებაიაში ანგარიში არ იქმნება და აპი არ ითხოვს სახელს, ასაკს, ფოტოს, ხმის ჩანაწერს, მდებარეობას, კონტაქტებს ან მოწყობილობის იდენტიფიკატორს.</p>
-      <p>აპში არ არის ანალიტიკა, რეკლამა ან რაიმე სახის მონიტორინგი. აპი ინტერნეტს არ უკავშირდება, გარდა App Store-ისა, როცა სრულ ვერსიას ყიდულობთ ან აღადგენთ.</p>
+    <h2>პატარა აპები შიგნით</h2>
+    <div class="apps">
+      <div class="card app">
+        <div class="icon" style="background: var(--green)">📞</div>
+        <h3>ტელეფონი</h3>
+        <p>რიცხვები 1-დან 10-მდე, ფერები და ვიქტორინა „სად არის…?“</p>
+      </div>
+      <div class="card app">
+        <div class="icon" style="background: var(--orange)">🐮</div>
+        <h3>ხმები</h3>
+        <p>შინაური და გარეული ცხოველები და მანქანები, თავიანთი ხმებით.</p>
+      </div>
+      <div class="card app">
+        <div class="icon" style="background: var(--purple)">⭐️</div>
+        <h3>ფიგურები</h3>
+        <p>კვადრატი, სამკუთხედი, წრე, რომბი, ვარსკვლავი და გული.</p>
+      </div>
+      <div class="card app">
+        <div class="icon" style="background: var(--blue)">➕</div>
+        <h3>მათემატიკა</h3>
+        <p>პირველი მიმატება და გამოკლება, 10-ის ფარგლებში.</p>
+      </div>
     </div>
 
+    <h2>მშობლებზეც ვიფიქრეთ</h2>
     <div class="card">
-      <h2>რა რჩება მოწყობილობაზე</h2>
-      <p>მუშაობისთვის აპი რამდენიმე რამეს მხოლოდ მოწყობილობაზე ინახავს:</p>
-      <ul>
-        <li>თქვენს პარამეტრებს: ენას, მშვიდ რეჟიმს, ტექსტს და თითოეული აპის პარამეტრებს;</li>
-        <li>დღიური უფასო თამაშის დროიდან რამდენი გამოიყენა თითოეულმა აპმა;</li>
-        <li>გახსნილია თუ არა სრული ვერსია (ამას iOS და App Store ინახავს).</li>
+      <ul class="points">
+        <li><span class="dot">🗣️</span><p><strong>ყველაფერი ხმით.</strong> მეგობრული ჩაწერილი ხმა ქართულად და ინგლისურად.</p></li>
+        <li><span class="dot">🌤️</span><p><strong>მშვიდი რეჟიმი.</strong> რბილი ფერები და წყნარი ცა მგრძნობიარე ბავშვებისთვის.</p></li>
+        <li><span class="dot">🔒</span><p><strong>შემთხვევით ვერ გავა.</strong> უკან დაბრუნებას და პარამეტრებს გასრიალება სჭირდება, აპი კი მართული წვდომის ჩართვაშიც დაგეხმარებათ.</p></li>
+        <li><span class="dot">🚫</span><p><strong>არც რეკლამა, არც მონიტორინგი, არც მონაცემები.</strong> არაფერი ტოვებს მოწყობილობას.</p></li>
+        <li><span class="dot">🎁</span><p><strong>სცადეთ უფასოდ.</strong> თითოეულ პატარა აპს დღეში 2 წუთი უფასო თამაში აქვს. სრული ვერსია ერთჯერადი შესყიდვაა, გამოწერის გარეშე.</p></li>
       </ul>
-      <p>ამ ინფორმაციას ჩვენ ვერ ვხედავთ. აპის წაშლისას ისიც იშლება.</p>
     </div>
 
-    <div class="card">
-      <h2>შესყიდვები</h2>
-      <p>სრული ვერსია ერთჯერადი შესყიდვაა აპის შიგნით და მას მთლიანად Apple ამუშავებს. თქვენს საგადახდო მონაცემებს და Apple-ის ანგარიშს ჩვენ ვერასდროს ვხედავთ. Apple გვაწვდის მხოლოდ ინფორმაციას ყიდვაზე, საიდანაც ვინმეს ინდენტიფიცირება შეუძლებელია. იხილეთ <a href="https://www.apple.com/legal/privacy/">Apple-ის კონფიდენციალურობის პოლიტიკა</a>.</p>
-    </div>
-
-    <div class="card">
-      <h2>ბავშვები</h2>
-      <p>ტელებაია შექმნილია დაახლოებით 1-დან 5 წლამდე ბავშვებისთვის. რადგან აპი არავისგან აგროვებს პირად ინფორმაციას, არც ბავშვებისგან აგროვებს. აპში არ არის რეკლამა, ჩატი ან ბმულები, რომლებზეც ბავშვი გადავა. ერთადერთი ბმულები (პირობები და ეს პოლიტიკა) სრული ვერსიის შესყიდვის გვერდზეა, რომელიც მხოლოდ მშობლებისთვის განკუთვნილი „გასახსნელად გაასვაიპე“ ღილაკით იხსნება.</p>
-    </div>
-
-    <div class="card">
-      <h2>ნებართვები</h2>
-      <p>აპი არანაირ ნებართვას არ ითხოვს: არც კამერას, მიკროფონს, ფოტოებს, მდებარეობას თუ შეტყობინებებს.</p>
-    </div>
-
-    <div class="card">
-      <h2>გაზიარება</h2>
-      <p>მონაცემები არ გვაქვს, ამიტომ არც ვაზიარებთ და არც ვყიდით. აპში არ არის მესამე მხარის კოდი, რომელიც მონაცემებს აგროვებს.</p>
-    </div>
-
-    <div class="card">
-      <h2>ცვლილებები</h2>
-      <p>თუ ეს პოლიტიკა შეიცვლება, განვაახლებთ ამ გვერდს და თარიღს ზემოთ.</p>
-    </div>
-
-    <div class="card">
-      <h2>კონტაქტი</h2>
-      <p>კითხვები გაქვთ კონფიდენციალურობაზე? მოგვწერეთ: <a href="mailto:me@stichoza.com">me@stichoza.com</a>.</p>
-    </div>
+    <footer>
+      <a href="privacy/#ka">კონფიდენციალურობის პოლიტიკა</a><span class="sep">·</span><a href="mailto:me@stichoza.com">კონტაქტი</a>
+      <p>© 2026 ლევან ველიჯანაშვილი</p>
+    </footer>
   </section>
-
-  <p class="note">© 2026 Levan Velijanashvili</p>
 </main>
 
 <script>
@@ -253,7 +252,7 @@
       sections.forEach(function (s) { s.classList.toggle("active", s.dataset.lang === lang); });
       buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.setLang === lang)); });
       document.documentElement.lang = lang;
-      document.title = lang === "ka" ? "ტელებაია: კონფიდენციალურობის პოლიტიკა" : "Telebaia Privacy Policy";
+      document.title = lang === "ka" ? "ტელებაია" : "Telebaia";
     }
 
     buttons.forEach(function (b) {
