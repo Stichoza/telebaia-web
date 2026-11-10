@@ -103,7 +103,7 @@
 
   /* Without JavaScript both languages show, one after the other. */
   .js [data-lang]:not(.active) { display: none; }
-  .lang + .lang { margin-top: 40px; }
+  html:not(.js) .lang + .lang { margin-top: 40px; }
 </style>
 </head>
 <body>
