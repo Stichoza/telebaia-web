@@ -105,7 +105,12 @@
 
   /* The mini-apps, like the home screen's icon grid. */
   .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .app { margin: 0; text-align: center; padding: 18px 12px; }
+  /* Frosted glass, so the colored icons stand out. */
+  .app {
+    margin: 0; text-align: center; padding: 18px 12px;
+    background: rgba(255, 255, 255, 0.4); border-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  }
   /* The home screen's icons: a white SF Symbol on the app's color. */
   .app .icon {
     width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 24px;
