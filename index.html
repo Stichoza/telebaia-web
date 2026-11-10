@@ -70,12 +70,15 @@
   .langs { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 8px; }
   .langs button {
     font: inherit; font-size: 16px; font-weight: 800; color: var(--navy);
-    padding: 8px 18px; border-radius: 999px; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 18px 5px 5px; border-radius: 999px; cursor: pointer;
     background: var(--card); border: 3px solid #fff;
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
   }
   .langs button[aria-pressed="true"] { background: var(--green); color: #fff; }
   .langs button:active { transform: scale(0.95); }
+  /* The flag in a white ring, like the app's language pills. */
+  .langs img { width: 28px; height: 28px; padding: 2px; border-radius: 50%; background: #fff; }
 
   .hero { text-align: center; padding: 16px 0 28px; }
   .hero img {
@@ -103,10 +106,11 @@
   /* The mini-apps, like the home screen's icon grid. */
   .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .app { margin: 0; text-align: center; padding: 18px 12px; }
+  /* The home screen's icons: a white SF Symbol on the app's color. */
   .app .icon {
-    width: 64px; height: 64px; margin: 0 auto 10px; border-radius: 18px;
-    display: grid; place-items: center; font-size: 32px;
-    border: 4px solid #fff; box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+    width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 24px;
+    display: grid; place-items: center;
+    border: 5px solid #fff; box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
   }
   .app p { font-size: 14px; }
 
@@ -137,8 +141,8 @@
 
 <main>
   <div class="langs" role="group" aria-label="Language">
-    <button type="button" data-set-lang="en" aria-pressed="true">English</button>
-    <button type="button" data-set-lang="ka" aria-pressed="false">ქართული</button>
+    <button type="button" data-set-lang="en" aria-pressed="true"><img src="img/flag-en.svg" alt="">English</button>
+    <button type="button" data-set-lang="ka" aria-pressed="false"><img src="img/flag-ka.svg" alt="">ქართული</button>
   </div>
 
   <!-- English -->
@@ -153,22 +157,22 @@
     <h2>Little apps inside</h2>
     <div class="apps">
       <div class="card app">
-        <div class="icon" style="background: var(--green)">📞</div>
+        <div class="icon" style="background: #3dcf6e"><img src="img/app-phone.png" width="44" alt=""></div>
         <h3>Phone</h3>
         <p>Numbers 1 to 10, colors and a “where is…?” quiz.</p>
       </div>
       <div class="card app">
-        <div class="icon" style="background: var(--orange)">🐮</div>
+        <div class="icon" style="background: #fa598c"><img src="img/app-sounds.png" width="60" alt=""></div>
         <h3>Sounds</h3>
         <p>Farm animals, wild animals and vehicles, with their real sounds.</p>
       </div>
       <div class="card app">
-        <div class="icon" style="background: var(--purple)">⭐️</div>
+        <div class="icon" style="background: #8f45d6"><img src="img/app-shapes.png" width="46" alt=""></div>
         <h3>Shapes</h3>
         <p>Square, triangle, circle, diamond, star and heart.</p>
       </div>
       <div class="card app">
-        <div class="icon" style="background: var(--blue)">➕</div>
+        <div class="icon" style="background: #ff8c1a"><img src="img/app-math.png" width="44" alt=""></div>
         <h3>Math</h3>
         <p>First addition and subtraction, all within 10.</p>
       </div>
@@ -203,22 +207,22 @@
     <h2>პატარა აპები შიგნით</h2>
     <div class="apps">
       <div class="card app">
-        <div class="icon" style="background: var(--green)">📞</div>
+        <div class="icon" style="background: #3dcf6e"><img src="img/app-phone.png" width="44" alt=""></div>
         <h3>ტელეფონი</h3>
         <p>რიცხვები 1-დან 10-მდე, ფერები და ვიქტორინა „სად არის…?“</p>
       </div>
       <div class="card app">
-        <div class="icon" style="background: var(--orange)">🐮</div>
+        <div class="icon" style="background: #fa598c"><img src="img/app-sounds.png" width="60" alt=""></div>
         <h3>ხმები</h3>
         <p>შინაური და გარეული ცხოველები და მანქანები, თავიანთი ხმებით.</p>
       </div>
       <div class="card app">
-        <div class="icon" style="background: var(--purple)">⭐️</div>
+        <div class="icon" style="background: #8f45d6"><img src="img/app-shapes.png" width="46" alt=""></div>
         <h3>ფიგურები</h3>
         <p>კვადრატი, სამკუთხედი, წრე, რომბი, ვარსკვლავი და გული.</p>
       </div>
       <div class="card app">
-        <div class="icon" style="background: var(--blue)">➕</div>
+        <div class="icon" style="background: #ff8c1a"><img src="img/app-math.png" width="44" alt=""></div>
         <h3>მათემატიკა</h3>
         <p>პირველი მიმატება და გამოკლება, 10-ის ფარგლებში.</p>
       </div>
