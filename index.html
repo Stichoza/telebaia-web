@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Telebaia</title>
-<meta name="description" content="A playful phone for little ones, aged 1 to 5: numbers, colors, shapes, math and sounds, all by voice, in Georgian and English.">
+<meta name="description" content="A playful phone for little ones, aged 1 to 6: numbers, colors, shapes, letters, math and sounds, all by voice, in Georgian and English.">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="256x256" href="icon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Telebaia">
 <meta property="og:title" content="Telebaia">
-<meta property="og:description" content="A playful phone for little ones, aged 1 to 5: numbers, colors, shapes, math and sounds, all by voice, in Georgian and English.">
+<meta property="og:description" content="A playful phone for little ones, aged 1 to 6: numbers, colors, shapes, letters, math and sounds, all by voice, in Georgian and English.">
 <meta property="og:url" content="https://telebaia.ge/">
 <meta property="og:image" content="https://telebaia.ge/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Telebaia">
-<meta name="twitter:description" content="A playful phone for little ones, aged 1 to 5: numbers, colors, shapes, math and sounds, all by voice, in Georgian and English.">
+<meta name="twitter:description" content="A playful phone for little ones, aged 1 to 6: numbers, colors, shapes, letters, math and sounds, all by voice, in Georgian and English.">
 <meta name="twitter:image" content="https://telebaia.ge/og-image.png">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -155,6 +155,8 @@
     border: 5px solid #fff; box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
   }
   .app p { font-size: 14px; }
+  /* An odd last app gets the whole row, like the home screen's last icon. */
+  .app:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
   .points { list-style: none; padding: 0; margin: 0; }
   .points li { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; }
@@ -218,6 +220,11 @@
         <p>Square, triangle, circle, diamond, star and heart.</p>
       </div>
       <div class="card app">
+        <div class="icon" style="background: #298cf2"><img src="img/app-alphabet.png" width="59" alt=""></div>
+        <h3>Alphabet</h3>
+        <p>Every letter with a picture, and a quiz to guess the first letter.</p>
+      </div>
+      <div class="card app">
         <div class="icon" style="background: #ff8c1a"><img src="img/app-math.png" width="44" alt=""></div>
         <h3>Math</h3>
         <p>First addition and subtraction, all within 10.</p>
@@ -231,6 +238,7 @@
         <li><span class="dot">🌤️</span><p><strong>Calm mode.</strong> Softer colors and a quiet background for lower visual stimulation.</p></li>
         <li><span class="dot">🔒</span><p><strong>Hard to leave by accident.</strong> Back and settings need a swipe, and the app guides you through Guided Access.</p></li>
         <li><span class="dot">🚫</span><p><strong>No ads, no tracking, no data.</strong> Nothing leaves the device and we don't collect any kind of data.</p></li>
+        <li><span class="dot">✈️</span><p><strong>Works offline.</strong> No internet needed, so it's fine on a plane or a long trip.</p></li>
         <li><span class="dot">🎁</span><p><strong>Try it free.</strong> Every little app has 2 minutes of free play a day. The full version is a one-time purchase, no subscription.</p></li>
       </ul>
     </div>
@@ -271,6 +279,11 @@
         <p>კვადრატი, სამკუთხედი, წრე, რომბი, ვარსკვლავი და გული.</p>
       </div>
       <div class="card app">
+        <div class="icon" style="background: #298cf2"><img src="img/app-alphabet.png" width="59" alt=""></div>
+        <h3>ანბანი</h3>
+        <p>ყველა ასო შესაბამისი სურათით და ვიქტორინა, სადაც პირველი ასო უნდა გამოიცნო.</p>
+      </div>
+      <div class="card app">
         <div class="icon" style="background: #ff8c1a"><img src="img/app-math.png" width="44" alt=""></div>
         <h3>მათემატიკა</h3>
         <p>მარტივი მიმატება და გამოკლება, 10-ის ფარგლებში.</p>
@@ -284,6 +297,7 @@
         <li><span class="dot">🌤️</span><p><strong>მშვიდი რეჟიმი.</strong> მსუბუქი ფერები და სადა ფონი ნაკლები ვიზუალური სტიმულისთვის.</p></li>
         <li><span class="dot">🔒</span><p><strong>უსაფრთხო ნავიგაცია.</strong> პარამეტრებში ან მენიუში შესასვლელად ღილაკის "გასვაიპებაა" საჭირო. აპი Guided Access-ის ჩართვაშიც დაგეხმარებათ.</p></li>
         <li><span class="dot">🚫</span><p><strong>არც რეკლამა, არც მონიტორინგი.</strong> არანაირ მონაცემს არ ვაგროვებთ, ყველაფერი თქვენს მოწყობილობაზე რჩება.</p></li>
+        <li><span class="dot">✈️</span><p><strong>ინტერნეტის გარეშე.</strong> ინტერნეტი საჭირო არ არის, ამიტომ თვითმფრინავში ან მოგზაურობისას გამოგადგებათ.</p></li>
         <li><span class="dot">🎁</span><p><strong>სცადეთ უფასოდ.</strong> ყველა მინი თამაში დღეში 2 წუთით უფასოა. შეიძინეთ სრული ვერსია ერთჯერადად გადახდით, ყველანაირი გამოწერის გარეშე.</p></li>
       </ul>
     </div>
