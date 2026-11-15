@@ -93,12 +93,20 @@
   .langs { position: absolute; top: 16px; right: 16px; z-index: 2; display: flex; gap: 8px; }
   .langs button {
     font: inherit; font-size: 16px; font-weight: 800; color: var(--navy);
-    display: flex; align-items: center; gap: 8px;
-    padding: 5px 18px 5px 5px; border-radius: 999px; cursor: pointer;
+    display: flex; align-items: center;
+    padding: 5px; border-radius: 999px; cursor: pointer;
     background: var(--card); border: 3px solid #fff;
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
+    transition: padding 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   }
-  .langs button[aria-pressed="true"] { background: var(--green); color: #fff; }
+  .langs button[aria-pressed="true"] { background: var(--green); color: #fff; padding-right: 18px; }
+  /* Only the active language shows its name; the others shrink to the flag.
+     Still in the accessibility tree, so each button keeps its label. */
+  .langs button span {
+    max-width: 0; margin-left: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+    transition: max-width 0.3s ease, margin-left 0.3s ease, opacity 0.2s ease;
+  }
+  .langs button[aria-pressed="true"] span { max-width: 120px; margin-left: 8px; opacity: 1; }
   .langs button:active { transform: scale(0.95); }
   /* The flag in a white ring, like the app's language pills. */
   .langs img { width: 28px; height: 28px; padding: 2px; border-radius: 50%; background: #fff; }
@@ -185,8 +193,8 @@
 </div>
 
 <div class="langs" role="group" aria-label="Language">
-  <button type="button" data-set-lang="en" aria-pressed="false"><img src="img/flag-en.svg" alt="">English</button>
-  <button type="button" data-set-lang="ka" aria-pressed="true"><img src="img/flag-ka.svg" alt="">ქართული</button>
+  <button type="button" data-set-lang="en" aria-pressed="false"><img src="img/flag-en.svg" alt=""><span>English</span></button>
+  <button type="button" data-set-lang="ka" aria-pressed="true"><img src="img/flag-ka.svg" alt=""><span>ქართული</span></button>
 </div>
 
 <main>
