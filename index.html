@@ -139,8 +139,10 @@
     padding: 2px 10px; box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15); transform: rotate(4deg);
   }
 
+  /* Frosted glass, so the colored icons stand out. */
   .card {
-    background: var(--card); border: 4px solid #fff; border-radius: 28px;
+    background: rgba(255, 255, 255, 0.4); border: 4px solid rgba(255, 255, 255, 0.8); border-radius: 28px;
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.12);
     padding: 18px 20px; margin-bottom: 16px;
   }
@@ -150,12 +152,7 @@
 
   /* The mini-apps, like the home screen's icon grid. */
   .apps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  /* Frosted glass, so the colored icons stand out. */
-  .app {
-    margin: 0; text-align: center; padding: 18px 12px;
-    background: rgba(255, 255, 255, 0.4); border-color: rgba(255, 255, 255, 0.8);
-    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-  }
+  .app { margin: 0; text-align: center; padding: 18px 12px; }
   /* The home screen's icons: a white SF Symbol on the app's color. */
   .app .icon {
     width: 80px; height: 80px; margin: 0 auto 12px; border-radius: 24px;
@@ -181,9 +178,9 @@
     stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
   }
 
-  /* Calm mode gets its own card: pastel, like the app in calm mode. */
+  /* Calm mode gets its own card. */
   /* Its icon sits on the card's top edge, so the text gets the full width. */
-  .calm { position: relative; margin-top: 52px; padding-top: 40px; background: rgba(240, 250, 244, 0.9); }
+  .calm { position: relative; margin-top: 52px; padding-top: 40px; }
   .calm .dot {
     position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
     width: 56px; height: 56px; border-radius: 18px; border-width: 4px; margin: 0;
