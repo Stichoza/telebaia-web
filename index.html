@@ -155,8 +155,9 @@
     border: 5px solid #fff; box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
   }
   .app p { font-size: 14px; }
-  /* An odd last app gets the whole row, like the home screen's last icon. */
-  .app:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* The placeholder for games still to come: dashed and a little quieter. */
+  .app.soon { border-style: dashed; background: rgba(255, 255, 255, 0.25); }
+  .app.soon .icon { background: #a9b8c6; border-style: dashed; box-shadow: none; }
 
   .points { list-style: none; padding: 0; margin: 0; }
   .points li { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; }
@@ -229,6 +230,11 @@
         <h3>Math</h3>
         <p>First addition and subtraction, all within 10.</p>
       </div>
+      <div class="card app soon">
+        <div class="icon"><img src="img/app-more.png" width="44" alt=""></div>
+        <h3>Coming soon</h3>
+        <p>More little games are on the way.</p>
+      </div>
     </div>
 
     <h2>Made for kids and parents</h2>
@@ -287,6 +293,11 @@
         <div class="icon" style="background: #ff8c1a"><img src="img/app-math.png" width="44" alt=""></div>
         <h3>მათემატიკა</h3>
         <p>მარტივი მიმატება და გამოკლება, 10-ის ფარგლებში.</p>
+      </div>
+      <div class="card app soon">
+        <div class="icon"><img src="img/app-more.png" width="44" alt=""></div>
+        <h3>მალე</h3>
+        <p>ახალი მინი თამაშები უკვე გზაშია.</p>
       </div>
     </div>
 
