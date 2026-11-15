@@ -182,8 +182,13 @@
   }
 
   /* Calm mode gets its own card: pastel, like the app in calm mode. */
-  .calm { display: flex; gap: 16px; align-items: flex-start; background: rgba(240, 250, 244, 0.9); }
-  .calm .dot { width: 56px; height: 56px; border-radius: 18px; border-width: 4px; margin: 0; }
+  /* Its icon sits on the card's top edge, so the text gets the full width. */
+  .calm { position: relative; margin-top: 44px; padding-top: 40px; background: rgba(240, 250, 244, 0.9); }
+  .calm .dot {
+    position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+    width: 56px; height: 56px; border-radius: 18px; border-width: 4px; margin: 0;
+  }
+  .calm h3 { text-align: center; }
   .calm .dot .fi { width: 28px; height: 28px; }
   .calm h3 { margin-bottom: 6px; }
   .calm p + p { margin-top: 8px; }
