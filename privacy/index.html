@@ -282,25 +282,22 @@
       sections.forEach(function (s) { s.classList.toggle("active", s.dataset.lang === lang); });
       buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.setLang === lang)); });
       document.documentElement.lang = lang;
-      document.querySelectorAll("a.home, a.brand").forEach(function (a) { a.setAttribute("href", "../#" + lang); });
+      document.querySelectorAll("a.home, a.brand").forEach(function (a) { a.setAttribute("href", "../?lang=" + lang); });
       document.title = lang === "ka" ? "ტელებაია: კონფიდენციალურობის პოლიტიკა" : "Telebaia Privacy Policy";
     }
 
     buttons.forEach(function (b) {
       b.addEventListener("click", function () {
         show(b.dataset.setLang);
-        history.replaceState(null, "", "#" + b.dataset.setLang);
+        var url = new URL(location.href);
+        url.searchParams.set("lang", b.dataset.setLang);
+        history.replaceState(null, "", url);
       });
     });
 
-    // #en shows English; #ka, no hash or anything else shows Georgian.
-    function showFromHash() {
-      show(location.hash.slice(1).toLowerCase() === "en" ? "en" : "ka");
-    }
-
-    // Changing only the hash doesn't reload the page, so follow it.
-    window.addEventListener("hashchange", showFromHash);
-    showFromHash();
+    // ?lang=en shows English; ?lang=ka, no lang or anything else shows Georgian.
+    var lang = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
+    show(lang === "en" ? "en" : "ka");
   })();
 </script>
 </body>

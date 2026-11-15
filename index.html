@@ -305,7 +305,7 @@
     </div>
 
     <footer>
-      <a href="privacy/#en">Privacy Policy</a><span class="sep">·</span><a href="mailto:me@stichoza.com">Contact</a>
+      <a href="privacy/?lang=en">Privacy Policy</a><span class="sep">·</span><a href="mailto:me@stichoza.com">Contact</a>
       <p>© 2026 Telebaia</p>
     </footer>
   </section>
@@ -382,7 +382,7 @@
     </div>
 
     <footer>
-      <a href="privacy/#ka">კონფიდენციალურობა</a><span class="sep">·</span><a href="mailto:me@stichoza.com">კონტაქტი</a>
+      <a href="privacy/?lang=ka">კონფიდენციალურობა</a><span class="sep">·</span><a href="mailto:me@stichoza.com">კონტაქტი</a>
       <p>© 2026 ტელებაია</p>
     </footer>
   </section>
@@ -406,18 +406,15 @@
     buttons.forEach(function (b) {
       b.addEventListener("click", function () {
         show(b.dataset.setLang);
-        history.replaceState(null, "", "#" + b.dataset.setLang);
+        var url = new URL(location.href);
+        url.searchParams.set("lang", b.dataset.setLang);
+        history.replaceState(null, "", url);
       });
     });
 
-    // #en shows English; #ka, no hash or anything else shows Georgian.
-    function showFromHash() {
-      show(location.hash.slice(1).toLowerCase() === "en" ? "en" : "ka");
-    }
-
-    // Changing only the hash doesn't reload the page, so follow it.
-    window.addEventListener("hashchange", showFromHash);
-    showFromHash();
+    // ?lang=en shows English; ?lang=ka, no lang or anything else shows Georgian.
+    var lang = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
+    show(lang === "en" ? "en" : "ka");
   })();
 </script>
 </body>
