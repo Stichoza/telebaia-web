@@ -1,11 +1,40 @@
 /* The app's fonts: SF Pro Rounded (Latin) and SF Georgian Rounded, self-hosted as woff2
    subsets so every platform sees the same letters as the app and the site makes no
-   third-party requests. Both are under one family name; unicode-range picks the file. */
+   third-party requests. Both are under one family name; unicode-range picks the file.
+   Every weight is its own face (the Georgian one reuses the variable file): a 600–900 range
+   on the Georgian face made Chrome pick it for Latin text at 800 and 900. */
 
 @font-face {
   font-family: 'Telebaia Rounded';
   font-style: normal;
-  font-weight: 600 900;
+  font-weight: 600;
+  font-display: swap;
+  src: url(sf-georgian-rounded.woff2) format('woff2');
+  unicode-range: U+0589, U+10A0-10FF, U+1C90-1CBF, U+2D00-2D2F;
+}
+
+@font-face {
+  font-family: 'Telebaia Rounded';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(sf-georgian-rounded.woff2) format('woff2');
+  unicode-range: U+0589, U+10A0-10FF, U+1C90-1CBF, U+2D00-2D2F;
+}
+
+@font-face {
+  font-family: 'Telebaia Rounded';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(sf-georgian-rounded.woff2) format('woff2');
+  unicode-range: U+0589, U+10A0-10FF, U+1C90-1CBF, U+2D00-2D2F;
+}
+
+@font-face {
+  font-family: 'Telebaia Rounded';
+  font-style: normal;
+  font-weight: 900;
   font-display: swap;
   src: url(sf-georgian-rounded.woff2) format('woff2');
   unicode-range: U+0589, U+10A0-10FF, U+1C90-1CBF, U+2D00-2D2F;

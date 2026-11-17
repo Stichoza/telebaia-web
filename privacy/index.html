@@ -37,18 +37,16 @@
     --grass: #7dcf5c;
     --card: rgba(255, 255, 255, 0.85);
     --green: #3fbf5a;
-    /* The app's SF Pro Rounded and SF Georgian Rounded, embedded from fonts/. */
-    --font: "Telebaia Rounded", ui-rounded, system-ui, sans-serif;
   }
 
-  * { box-sizing: border-box; }
+  /* The app's SF Pro Rounded and SF Georgian Rounded, embedded from fonts/, on every element. */
+  * { box-sizing: border-box; font-family: "Telebaia Rounded"; }
 
   html { background: var(--sky-top); }
 
   body {
     margin: 0;
     min-height: 100vh;
-    font-family: var(--font);
     color: var(--navy);
     background: linear-gradient(to bottom, var(--sky-top), var(--sky-mid) 55%, var(--sky-bottom));
     background-attachment: fixed;
