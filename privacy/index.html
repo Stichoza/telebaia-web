@@ -39,8 +39,8 @@
     --green: #3fbf5a;
   }
 
-  /* The app's SF Pro Rounded and SF Georgian Rounded, embedded from fonts/, on every element. */
-  * { box-sizing: border-box; font-family: "Telebaia Rounded"; }
+  /* Apple's own rounded system font first (SF Pro Rounded); elsewhere the embedded copies in fonts/. */
+  * { box-sizing: border-box; font-family: ui-rounded, "Telebaia Rounded"; }
 
   html { background: var(--sky-top); }
 
